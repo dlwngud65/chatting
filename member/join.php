@@ -5,7 +5,6 @@ if(isset($_SESSION['wiz_session']['id'])){
 	exit;
 }
 
-
 ?>
 <body>
   <div class="wrapper">
@@ -28,10 +27,6 @@ if(isset($_SESSION['wiz_session']['id'])){
           <input type="password" name="password" placeholder="비밀번호를 입력해주세요." required>
           <i class="fas fa-eye"></i>
         </div>
-        <div class="field image">
-          <label>이미지</label>
-          <input type="file" name="image" accept="image/x-png,image/gif,image/jpeg,image/jpg" >
-        </div>
         <div class="field button">
           <input type="submit" name="submit" value="회원가입">
         </div>
@@ -40,7 +35,7 @@ if(isset($_SESSION['wiz_session']['id'])){
     </section>
   </div>
 
-  <script src="/js/join.js?ver=<?=rand(1,10)?>"></script>
+  <script src="/js/join.js?ver=<?=rand(1,9999)?>"></script>
 	<!--
   <script src="javascript/pass-show-hide.js"></script>
   <script src="javascript/signup.js"></script>

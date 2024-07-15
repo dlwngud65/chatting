@@ -11,6 +11,8 @@ if(isset($_SESSION['wiz_session']['id'])){
     <section class="form login">
       <header>채팅앱</header>
       <form action="#" method="POST" enctype="multipart/form-data" autocomplete="off">
+	    <input type="hidden" name="mode" value="loginCheck">
+	    <div class="error-text"></div>
         <div class="field input">
           <label>이메일</label>
           <input type="text" name="email" placeholder="이메일을 입력해주세요." required>
@@ -27,6 +29,9 @@ if(isset($_SESSION['wiz_session']['id'])){
       <div class="link">아직 회원이 아니신가요? <a href="/member/join.php">[회원가입 하러가기]</a></div>
     </section>
   </div>
+
+  <script src="/js/login.js?ver=<?=rand(1,9999)?>"></script>
+
   <!--
   <script src="javascript/pass-show-hide.js"></script>
   <script src="javascript/signup.js"></script>
