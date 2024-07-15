@@ -4,16 +4,19 @@ if(isset($_SESSION['wiz_session']['id'])){
     header("location: /chat/list.php");
 	exit;
 }
+
+
 ?>
 <body>
   <div class="wrapper">
     <section class="form signup">
       <header>채팅앱 회원가입</header>
       <form action="#" method="POST" enctype="multipart/form-data" autocomplete="off">
-
+		<input type="hidden" name="mode" value="signup">
+		<div class="error-text"></div>
         <div class="field input">
           <label>이름</label>
-          <input type="text" name="email" placeholder="이름을 입력해주세요." required>
+          <input type="text" name="name" placeholder="이름을 입력해주세요." required>
         </div>
 
         <div class="field input">
@@ -36,6 +39,8 @@ if(isset($_SESSION['wiz_session']['id'])){
       <div class="link">이미 가입하셨습니까? <a href="/index.php">[로그인 하러가기]</a></div>
     </section>
   </div>
+
+  <script src="/js/join.js?ver=<?=rand(1,10)?>"></script>
 	<!--
   <script src="javascript/pass-show-hide.js"></script>
   <script src="javascript/signup.js"></script>

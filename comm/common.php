@@ -19,4 +19,30 @@ define('ADMIN_PATH', $_SERVER['DOCUMENT_ROOT'].'/'.ADMIN);
 
 include $_SERVER['DOCUMENT_ROOT']."/comm/dbcon.php";
 $pdo = new PDO("mysql:host={$dbHost};dbname={$dbName};charset={$dbChar}", $dbUser, $dbPass);
+
+function sql_filter($str)
+{
+  $str = addslashes($str);
+  $search = array("--", "#", ";");
+  $replace = array("\--", "\#", "\;");
+  $str = str_replace($search, $replace, $str);
+
+  return $str;
+
+}
+
+function errorMsg($msg, $go_url=""){
+
+    echo "<meta http-equiv='Content-Type' c&#111;&#110;tent='text/html; charset=utf-8'>";
+	if($go_url == "") {
+		echo "<script>alert(\"$msg\");history.go(-1);</script>";
+		exit;
+	} else {
+		echo "<script>alert(\"$msg\");document.location=\"$go_url\";</script>";
+		exit;
+	}
+
+
+}
+
 ?>
