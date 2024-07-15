@@ -1,6 +1,5 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT']."/include/header.php"; 
-
 if(isset($_SESSION['wiz_session']['id'])){
     header("location: /chat/list.php");
 	exit;
@@ -8,9 +7,15 @@ if(isset($_SESSION['wiz_session']['id'])){
 ?>
 <body>
   <div class="wrapper">
-    <section class="form login">
-      <header>채팅앱</header>
+    <section class="form signup">
+      <header>채팅앱 회원가입</header>
       <form action="#" method="POST" enctype="multipart/form-data" autocomplete="off">
+
+        <div class="field input">
+          <label>이름</label>
+          <input type="text" name="email" placeholder="이름을 입력해주세요." required>
+        </div>
+
         <div class="field input">
           <label>이메일</label>
           <input type="text" name="email" placeholder="이메일을 입력해주세요." required>
@@ -20,14 +25,18 @@ if(isset($_SESSION['wiz_session']['id'])){
           <input type="password" name="password" placeholder="비밀번호를 입력해주세요." required>
           <i class="fas fa-eye"></i>
         </div>
+        <div class="field image">
+          <label>이미지</label>
+          <input type="file" name="image" accept="image/x-png,image/gif,image/jpeg,image/jpg" >
+        </div>
         <div class="field button">
-          <input type="submit" name="submit" value="로그인">
+          <input type="submit" name="submit" value="회원가입">
         </div>
       </form>
-      <div class="link">아직 회원이 아니신가요? <a href="/member/join.php">[회원가입 하러가기]</a></div>
+      <div class="link">이미 가입하셨습니까? <a href="/index.php">[로그인 하러가기]</a></div>
     </section>
   </div>
-  <!--
+	<!--
   <script src="javascript/pass-show-hide.js"></script>
   <script src="javascript/signup.js"></script>
 	-->
