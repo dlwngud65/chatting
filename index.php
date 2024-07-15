@@ -9,7 +9,7 @@ if(isset($_SESSION['wiz_session']['id'])){
 <body>
   <div class="wrapper">
     <section class="form login">
-      <header>채팅앱</header>
+      <header>채팅앱1</header>
       <form action="#" method="POST" enctype="multipart/form-data" autocomplete="off">
 	    <input type="hidden" name="mode" value="loginCheck">
 	    <div class="error-text"></div>
